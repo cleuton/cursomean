@@ -1,0 +1,14 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.links {
+  font-weight: bold;
+  text-decoration: underline;
+  color: blue;
+}
+
+a {
+  color: #00B7FF;
+}

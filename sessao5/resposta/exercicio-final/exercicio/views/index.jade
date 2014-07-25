@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  h1= title
+  div(ng-controller="meucontroller" ng-init="mostrarIA=false;erro=null")
+    ul
+      li(ng-repeat="pessoa in artistas") 
+        a(ng-click="getArtista(pessoa.nome)")
+          {{ pessoa.nome }}
+    br
+    input(type="button" value="Novo artista..."
+          ng-click="habilitarNovoArtista()"
+          ng-show="!mostrarIA")
+
+    div(ng-show="mostrarIA")
+      label  Nome:
+      input(type="text" ng-model="txtNomeArt")
+      span(ng-show="!txtNomeArt || (txtNomeArt.length==0)") Informe o nome do Artista
+      br
+      label Estilo:
+      select(ng-model="selEstilo")
+        option(ng-repeat="estilo in estilos") 
+          {{ estilo.nome }}
+      span(ng-show="(!selEstilo) || (selEstilo.length==0)") Selecione o estilo
+      br
+      input(type="button" value="Incluir" ng-click="incluirArtista()")
+      input(type="button" value="Cancelar" ng-click="mostrarIA=false")
+      br
+      span(ng-show="erro") {{ erro }}
+
+    div(ng-show="artista")
+      ul
+        li
+          {{ artista.nome }}
+        li 
+          {{ artista.estilo_id.nome }}
+      table(border)
+        tr(ng-repeat="musica in artista.musicas")
+          th
+            {{ musica.titulo }}
+          
+      

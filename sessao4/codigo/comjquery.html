@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#seunome").keypress(function(e){
+         $("#saida").text($("#saida").text() 
+           + String.fromCharCode(e.which));
+      });
+      $("#seunome").keyup(function(e) {
+        if (e.keyCode == 8) {
+            var origem = '';
+            if (this.value.length > 0) {
+              origem = this.value.substring(0,this.value.length-1);
+            }
+            saida.textContent = origem;  
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <div>
+      <label>Nome:</label>
+      <input type="text" placeholder="Digite seu nome" id="seunome" />
+      <hr>
+      <h1>Ol&aacute; <span id="saida"></span>!</h1>
+    </div>
+  </body>
+</html>

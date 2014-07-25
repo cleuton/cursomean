@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="exemplo">
+  <body>
+    <div ng-controller="controlador">
+      <h1>Ol&aacute; {{seuNome}}!</h1>
+      <p>{{ bomdia(seuNome) }}</p>
+    </div>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+      var modulo = angular.module('exemplo', []);
+      modulo.controller('controlador', ['$scope', function($scope) {
+        $scope.seuNome = 'Cleuton Sampaio';
+        $scope.bomdia  = function(nome) {
+            return "Bom dia, " + nome;
+        };
+      }]);  
+    </script>  
+  </body>
+</html>

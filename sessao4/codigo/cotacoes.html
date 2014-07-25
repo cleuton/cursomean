@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app ng-init="reais=0.00;dolares=0.00;cotacao=2.00">
+  <body>
+    <div>
+      <form name="conversao">
+        <label>Valor em Reais:</label>
+        <input name="txtreais" type="text" ng-model="reais" required>
+        <span class="error" 
+            ng-show="conversao['txtreais'].$error.required">
+            Digite um valor em Reais!</span><br/>
+        <label>Valor em D&oacute;lares:</label>
+        <input name="txtdolares" type="text" ng-model="dolares" required> 
+        <span class="error" 
+            ng-show="conversao['txtdolares'].$error.required">
+            Digite um valor em D&oacute;lares!</span><br/>                 
+        <label>Cota&ccedil;&atilde;o:</label>
+        <input name="txtcotacao" type="text" ng-model="cotacao" required> 
+        <span class="error" 
+            ng-show="conversao['txtcotacao'].$error.required">
+            Digite um valor em Reais para a cota&ccedil;&atilde;o!</span><br/>   
+        <br/>Valor em Reais: {{ dolares * cotacao | currency }}
+        <br/>Valor em D&oacute;lares: {{ reais / cotacao | currency }}
+      </form>
+    </div>
+  <script src="angular.min.js"></script>  
+  <script src="angular-locale_pt-br.js"></script>  
+  </body>
+</html>

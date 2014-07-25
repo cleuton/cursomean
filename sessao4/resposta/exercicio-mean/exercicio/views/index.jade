@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  div(ng-controller="meucontroller")
+    ul
+      li(ng-repeat="pessoa in artistas") 
+        a(ng-click="getArtista(pessoa.nome)")
+          {{ pessoa.nome }}
+    br
+    div(ng-show="artista")
+      ul
+        li
+          {{ artista.nome }}
+        li 
+          {{ artista.estilo_id.nome }}
+      table(border)
+        tr(ng-repeat="musica in artista.musicas")
+          th
+            {{ musica.titulo }}
+          
+      

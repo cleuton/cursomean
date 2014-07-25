@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="exemplo">
+  <body>
+    <div ng-controller="controlador">
+      <ul>
+        <li ng-repeat="pessoa in lista">
+          {{ pessoa.nome }},
+          {{ pessoa.telefone }}
+        </li>
+      </ul>
+    </div>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+      angular.module('exemplo', [])
+        .controller('controlador', ['$scope', function($scope) {
+        $scope.lista = [{nome : 'Cleuton Sampaio', telefone : 555},
+                        {nome : 'Fulano de Tal',   telefone : 444},
+                        {nome : 'Beltrano',        telefone : 333}];
+      }]);  
+    </script>  
+  </body>
+</html>

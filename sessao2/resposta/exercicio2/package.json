@@ -1,0 +1,11 @@
+{
+  "name": "s2exercicio2",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node s2exercicio2.js"
+  },
+  "dependencies": {
+    "moongose": "*"
+  }
+}

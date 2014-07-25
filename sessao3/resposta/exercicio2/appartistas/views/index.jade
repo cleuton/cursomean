@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Bem vindo ao #{title}
+  ul
+    each artista in lista
+      li(class='links')= artista.nome
+  div(id='saida')
+    

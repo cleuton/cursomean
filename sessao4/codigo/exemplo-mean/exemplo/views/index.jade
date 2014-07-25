@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p #{title}
+  div(ng-controller="estilocontroller")
+    li(ng-repeat="estilo in estilos") 
+      {{ estilo.nome }}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="exemplo">
+  <body>
+    <div ng-controller="controlador">
+      <h1>Ol&aacute; {{seuNome}}!</h1>
+    </div>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+      angular.module('exemplo', [])
+        .controller('controlador', ['$scope', function($scope) {
+        $scope.seuNome = 'Cleuton Sampaio';
+      }]);  
+    </script>  
+  </body>
+</html>

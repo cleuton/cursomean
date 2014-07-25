@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript">
+    function hook() {
+       var saida  = document.getElementById('saida');
+       seunome.onkeypress = function (e) {
+         if (e.which >= 32) {
+          saida.textContent += String.fromCharCode(e.which);
+        }
+        else {
+          if (e.which == 8) {
+            var origem = '';
+            if (this.value.length > 0) {
+              origem = this.value.substring(0,this.value.length-1);
+            }
+            saida.textContent = origem;           
+          }
+        }
+       };
+    }
+    </script>
+  </head>
+  <body onload="hook()">
+    <div>
+      <label>Nome:</label>
+      <input type="text" placeholder="Digite seu nome" id="seunome" />
+      <hr>
+      <h1>Ol&aacute; <span id="saida"></span>!</h1>
+    </div>
+  </body>
+</html>
